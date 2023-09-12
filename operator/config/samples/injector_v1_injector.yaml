@@ -1,0 +1,12 @@
+apiVersion: injector.dev.mehmetgrsl/v1
+kind: Injector
+metadata:
+  labels:
+    app.kubernetes.io/name: injector
+    app.kubernetes.io/instance: injector-sample
+    app.kubernetes.io/part-of: operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: operator
+  name: injector-sample
+spec:
+  # TODO(user): Add fields here
