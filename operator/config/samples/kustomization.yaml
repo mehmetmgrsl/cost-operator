@@ -1,4 +1,4 @@
 ## Append samples of your project ##
 resources:
-- injector_v1_injector.yaml
+- core_v1_pod.yaml
 #+kubebuilder:scaffold:manifestskustomizesamples

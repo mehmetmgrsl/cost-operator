@@ -23,17 +23,17 @@ import (
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
-// InjectorSpec defines the desired state of Injector
-type InjectorSpec struct {
+// PodSpec defines the desired state of Pod
+type PodSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of Injector. Edit injector_types.go to remove/update
+	// Foo is an example field of Pod. Edit pod_types.go to remove/update
 	Foo string `json:"foo,omitempty"`
 }
 
-// InjectorStatus defines the observed state of Injector
-type InjectorStatus struct {
+// PodStatus defines the observed state of Pod
+type PodStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 }
@@ -41,24 +41,24 @@ type InjectorStatus struct {
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
 
-// Injector is the Schema for the injectors API
-type Injector struct {
+// Pod is the Schema for the pods API
+type Pod struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
-	Spec   InjectorSpec   `json:"spec,omitempty"`
-	Status InjectorStatus `json:"status,omitempty"`
+	Spec   PodSpec   `json:"spec,omitempty"`
+	Status PodStatus `json:"status,omitempty"`
 }
 
 //+kubebuilder:object:root=true
 
-// InjectorList contains a list of Injector
-type InjectorList struct {
+// PodList contains a list of Pod
+type PodList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []Injector `json:"items"`
+	Items           []Pod `json:"items"`
 }
 
 func init() {
-	SchemeBuilder.Register(&Injector{}, &InjectorList{})
+	SchemeBuilder.Register(&Pod{}, &PodList{})
 }
